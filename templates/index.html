@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Content Summarizer</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Content Summarizer</h1>
+
+    <div class="panels">
+
+        <!-- Original Content -->
+        <div class="panel">
+
+            <h3>Original Content</h3>
+
+            <textarea
+                id="inputText"
+                placeholder="Paste your content here...">
+            </textarea>
+<div class="controls">
+
+    <label for="summaryLevel">
+        Summary Type:
+    </label>
+
+    <select id="summaryLevel">
+
+        <option value="0.3">
+            Short (30%)
+        </option>
+
+        <option value="0.6" selected>
+            Medium (60%)
+        </option>
+
+        <option value="0.8">
+            Detailed (80%)
+        </option>
+
+    </select>
+
+    <button id="clearBtn">
+        Clear
+    </button>
+
+</div>
+
+        </div>
+
+        <!-- Summary -->
+        <div class="panel">
+
+            <h3>Summary</h3>
+
+            <textarea
+                id="summaryText"
+                readonly>
+            </textarea>
+
+            <div class="stats">
+
+                <p>
+                    <strong>Original Words:</strong>
+                    <span id="originalCount">0</span>
+                </p>
+
+                <p>
+                    <strong>Summary Words:</strong>
+                    <span id="summaryCount">0</span>
+                </p>
+
+                <p>
+                    <strong>Compression:</strong>
+                    <span id="compression">0%</span>
+                </p>
+
+            </div>
+
+            <button id="copyBtn">
+                Copy Summary
+            </button>
+
+            <p id="loading"></p>
+
+        </div>
+
+    </div>
+
+    <button id="summarizeBtn">
+        Summarize
+    </button>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
