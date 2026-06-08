@@ -1,1 +1,1 @@
-# text-summerizer
+# AI-text-summariser
